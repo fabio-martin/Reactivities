@@ -55,11 +55,6 @@ export default observer(function ActivityForm() {
     }
   }
 
-  // function handleChange(event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) {
-  //   const { name, value } = event.target;
-  //   setActivity({ ...activity, [name]: value });
-  // }
-
   if (loadingInitial) return <LoadingComponent content="Loading activity.." />;
 
   return (
