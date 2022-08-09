@@ -49,7 +49,7 @@ namespace Application.Activities
                     AppUser = user,
                     ActivityId = request.Activity.Id,
                     Activity = request.Activity,
-                    isHost = true
+                    IsHost = true
                 };
 
                 request.Activity.Attendees.Add(attendee);

@@ -42,7 +42,7 @@ namespace Application.Activities
 
                 if(user == null) return null;
 
-                var hostUsername = activity.Attendees.FirstOrDefault( x => x.isHost)?.AppUser?.UserName;
+                var hostUsername = activity.Attendees.FirstOrDefault( x => x.IsHost)?.AppUser?.UserName;
 
                 var attendance = activity.Attendees.FirstOrDefault( x => x.AppUser.UserName == user.UserName);
 
@@ -53,7 +53,7 @@ namespace Application.Activities
                 }
 
                 // the user is an attendee for this activity
-                if(attendance != null  && hostUsername != null) 
+                if(attendance != null  && hostUsername != user.UserName) 
                 {
                     activity.Attendees.Remove(attendance);
                 }
@@ -64,7 +64,7 @@ namespace Application.Activities
                     {
                         AppUser = user, 
                         Activity = activity,
-                        isHost = false
+                        IsHost = false
                     };
 
                     activity.Attendees.Add(attendance);

@@ -15,7 +15,7 @@ namespace Domain
 
         public Activity Activity { get; set; }
 
-        public bool isHost { get; set; }
+        public bool IsHost { get; set; }
 
         
 
