@@ -17,12 +17,19 @@ export default function ActivityListItem({ activity }: Props) {
         )}
         <Item.Group>
           <Item>
-            <Item.Image size="tiny" circular src="/assets/user.png" style={{ marginBottom: 3}}/>
+            <Item.Image
+              size="tiny"
+              circular
+              src={activity.host?.image || '/assets/user.png'}
+              style={{ marginBottom: 3 }}
+            />
             <Item.Content>
               <Item.Header as={Link} to={`/activities/${activity.id}`}>
                 {activity.title}
               </Item.Header>
-              <Item.Description>Hosted by {activity.host?.displayName}</Item.Description>
+              <Item.Description>
+                Hosted by <Link to={`/profiles/${activity.hostUsername}`}>{activity.host?.displayName}</Link>
+              </Item.Description>
               {activity.isHost && (
                 <Item.Description>
                   <Label basic color="orange">
