@@ -10,6 +10,7 @@ import { store, StoreContext } from './app/stores/store';
 import { Router } from 'react-router-dom';
 
 import { createBrowserHistory } from 'history';
+import ScrollToTop from './app/layout/ScrollToTop';
 
 export const history = createBrowserHistory();
 
@@ -17,6 +18,7 @@ const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 root.render(
   <StoreContext.Provider value={store}>
     <Router history={history}>
+      <ScrollToTop />
       <App />
     </Router>
   </StoreContext.Provider>
