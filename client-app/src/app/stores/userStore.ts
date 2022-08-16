@@ -95,8 +95,18 @@ export default class UserStore {
       apiLogin(this.fbAccessToken);
     } else {
       window.FB.login(
-        (response) => {
-          apiLogin(response.authResponse.accessToken);
+        (response: fb.StatusResponse) => {
+          if (response.authResponse) {
+            console.log('Welcome!  Fetching your information.... ');
+            FB.api('/me', function (response: any) {
+              console.log('Good to see you, ' + response.name + '.');
+            });
+            apiLogin(response.authResponse.accessToken);
+          } else {
+            console.log('User cancelled login or did not fully authorize.');
+          }
+          // console.log(response);
+          // apiLogin(response.authResponse.accessToken);
         },
         { scope: 'public_profile,email' }
       );
