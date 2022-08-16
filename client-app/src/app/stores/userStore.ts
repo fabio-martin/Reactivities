@@ -61,7 +61,14 @@ export default class UserStore {
     if (this.user) this.user.image = image;
   };
 
-  deleteImage = (image: string) => {
-  
-  }
+  deleteImage = (image: string) => {};
+
+  facebookLogin = () => {
+    window.FB.login(
+      (response) => {
+        agent.Account.fbLogin(response.authResponse.accessToken).then((user) => console.log(user));
+      },
+      { scope: 'public_profile,email' }
+    );
+  };
 }

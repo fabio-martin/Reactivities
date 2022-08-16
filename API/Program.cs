@@ -70,8 +70,6 @@ else
     });
 }
 
-
-
 // app.UseHttpsRedirection();
 
 // look for anything inside wwwroot folder that is an index.html file

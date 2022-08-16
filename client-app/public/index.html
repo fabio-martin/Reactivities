@@ -30,6 +30,17 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" />
 
   <noscript>You need to enable JavaScript to run this app.</noscript>
+  <script>
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId            : '414312514040168',
+        autoLogAppEvents : true,
+        xfbml            : true,
+        version          : 'v14.0'
+      });
+    };
+  </script>
+  <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
   <div id="root"></div>
   <!--
       This HTML file is a template.
