@@ -44,7 +44,7 @@ app.UseXContentTypeOptions();
 app.UseReferrerPolicy(opt => opt.NoReferrer());
 app.UseXXssProtection(opt => opt.EnabledWithBlockMode());
 app.UseXfo( opt => opt.Deny());
-app.UseCsp( opt => opt 
+app.UseCspReportOnly( opt => opt 
     .BlockAllMixedContent()
     .StyleSources( s => s.Self().CustomSources("https://fonts.googleapis.com", "https://cdnjs.cloudflare.com", "sha256-yR2gSI6BIICdRRE2IbNP1SJXeA5NYPbaM32i/Y8eS9o="))
     .FontSources( s => s.Self().CustomSources("https://fonts.gstatic.com", "https://cdnjs.cloudflare.com", "data:"))
