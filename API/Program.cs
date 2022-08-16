@@ -46,11 +46,11 @@ app.UseXXssProtection(opt => opt.EnabledWithBlockMode());
 app.UseXfo( opt => opt.Deny());
 app.UseCsp( opt => opt 
     .BlockAllMixedContent()
-    .StyleSources( s => s.Self().CustomSources("https://fonts.googleapis.com", "https://cdnjs.cloudflare.com"))
+    .StyleSources( s => s.Self().CustomSources("https://fonts.googleapis.com", "https://cdnjs.cloudflare.com", "sha256-yR2gSI6BIICdRRE2IbNP1SJXeA5NYPbaM32i/Y8eS9o="))
     .FontSources( s => s.Self().CustomSources("https://fonts.gstatic.com", "https://cdnjs.cloudflare.com", "data:"))
     .FormActions( s => s.Self())
     .FrameAncestors( s => s.Self())
-    .ImageSources(s => s.Self().CustomSources("https://res.cloudinary.com", "data:"))
+    .ImageSources(s => s.Self().CustomSources("https://res.cloudinary.com", "data:", "https://www.facebook.com"))
     .ScriptSources( s => s.Self().CustomSources("sha256-QeZ+x93zu/ME1AHNpWTgpF58ogl/Yt2pPTQ0zSK8rKM=", "https://connect.facebook.net"))
 );
 
